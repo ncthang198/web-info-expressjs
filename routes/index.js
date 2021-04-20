@@ -17,14 +17,12 @@ router.get("/", function (req, res, next) {
 /* GET home page. */
 router.get("/hom-nay-an-gi", function (req, res, next) {
   var dish = "...";
-  axios
-    // .post("http://103.130.212.235:2021/api/v1/quote/get_quotes")
-    .post("http://localhost:1999/api/v1/food/get_random_food")
-    // .post("http://localhost:1999/api/v1/food/get_all_foods")
+  axios    
+    .post("http://103.130.212.235:1999/api/v1/food/get_random_food")
+
     .then(function (response) {
       // handle success
-      dish = response.data.food;
-      console.log(dish, "dish111");      
+      dish = response.data.food;      
     })
     .catch(function (error) {
       // handle error
@@ -33,6 +31,24 @@ router.get("/hom-nay-an-gi", function (req, res, next) {
     .then(function () {
       // always executed
       return res.render("hom-nay-an-gi", { dish: dish });
+    });
+});
+router.get("/foods-tour", function (req, res, next) {
+  var dishes = "...";
+  axios    
+    .post("http://103.130.212.235:1999/api/v1/food/get_all_foods")
+
+    .then(function (response) {
+      // handle success
+      dishes = response.data.foods;      
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+      return res.render("foods-tour", { dishes: dishes });
     });
 });
 

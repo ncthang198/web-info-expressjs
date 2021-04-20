@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hôm nay ăn gì</title>
+</head>
+
+<body>  
+  <h2><a href="/hom-nay-an-gi">BẤM VÀO ĐÂY ĐỂ XEM HÔM NAY ĂN GÌ</a> </h2>  
+  <h1>DANH SÁCH MÓN ĂN</h1>
+  <ul>
+    <% dishes.forEach(function(dish){ %>
+      <li>
+        <%=dish.dishName%> - <%=dish.describe%> - <%=dish.address%>
+      </li>
+      <% }); %>
+  </ul>
+</body>
+
+</html>
