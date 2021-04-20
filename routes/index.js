@@ -1,15 +1,39 @@
-var express = require('express');
+var express = require("express");
+const axios = require("axios");
+
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  let diffDays = dayDiff()
+router.get("/", function (req, res, next) {
+  let diffDays = dayDiff();
 
   // console.log("year: ", parseInt(dayDiff() / 365))
   // console.log("month: ", monthDiff())
   // console.log("day: ", dayDiff())
-  console.log(diffDays)
-  res.render('index', { diffDays: diffDays });
+  console.log(diffDays);
+  res.render("index", { diffDays: diffDays });
+});
+
+/* GET home page. */
+router.get("/hom-nay-an-gi", function (req, res, next) {
+  var dish = "...";
+  axios
+    // .post("http://103.130.212.235:2021/api/v1/quote/get_quotes")
+    .post("http://localhost:1999/api/v1/food/get_random_food")
+    // .post("http://localhost:1999/api/v1/food/get_all_foods")
+    .then(function (response) {
+      // handle success
+      dish = response.data.food;
+      console.log(dish, "dish111");      
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+      return res.render("hom-nay-an-gi", { dish: dish });
+    });
 });
 
 function monthDiff(firstDate = new Date()) {
@@ -25,10 +49,10 @@ function monthDiff(firstDate = new Date()) {
 const dayDiff = () => {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const firstDate = new Date("2020-06-06");
-  console.log(firstDate)
+  console.log(firstDate);
   const today = new Date();
-  console.log(today)
+  console.log(today);
   const diffDays = Math.round(Math.abs((today - firstDate) / oneDay));
-  return diffDays
-}
+  return diffDays;
+};
 module.exports = router;
