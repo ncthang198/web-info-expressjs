@@ -33,6 +33,12 @@ router.get("/hom-nay-an-gi", function (req, res, next) {
       return res.render("hom-nay-an-gi", { dish: dish });
     });
 });
+router.get("/them-mon-an", function (req, res, next) {
+  return res.render("them-mon-an");
+});
+router.post("/them-mon-an", function (req, res, next) {
+  console.log("zoooooo", req.params)
+});
 router.get("/foods-tour", function (req, res, next) {
   var dishes = "...";
   axios    

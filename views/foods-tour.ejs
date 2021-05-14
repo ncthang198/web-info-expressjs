@@ -6,18 +6,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hôm nay ăn gì</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
 </head>
 
-<body>  
-  <h2><a href="/hom-nay-an-gi">BẤM VÀO ĐÂY ĐỂ XEM HÔM NAY ĂN GÌ</a> </h2>  
-  <h1>DANH SÁCH MÓN ĂN</h1>
-  <ul>
-    <% dishes.forEach(function(dish){ %>
-      <li>
-        <%=dish.dishName%> - <%=dish.describe%> - <%=dish.address%>
-      </li>
-      <% }); %>
-  </ul>
+<body>
+  <%- include('navigation', {data: null}); %>
+    <h1>Quản lý món ăn</h1>
+    <button type="button" class="btn btn-primary" onclick="onAdd()">Thêm món ăn</button>
+    <div class="table-responsive-sm">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col-3">Tên món</th>
+            <th scope="col-3">Miêu tả</th>
+            <th scope="col-4">Địa chỉ</th>
+            <th scope="col-2">Tuỳ chọn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% dishes.forEach(function(dish){ %>
+
+            <tr>
+              <td>
+                <%=dish.dishName%>
+              </td>
+              <td>
+                <%=dish.describe%>
+              </td>
+              <td>
+                <%=dish.address%>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary" onclick="onEdit()">Sửa</button>
+                <button type="button" class="btn btn-danger" onclick="onDelete()">Xoá</button>
+
+              </td>
+              <% }); %>
+
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      
+      function onEdit() {
+        window.location.href = "/hom-nay-an-gi";
+      }
+      function onDelete() {        
+        let txt = ""
+        var r = confirm("Xác nhận xoá món ăn ?");
+        if (r == true) {
+          window.location.href = "/delete/";
+          txt = "You pressed OK!";
+          alert(txt);
+        }
+      }
+      function onAdd() {
+        window.location.href = "/them-mon-an";
+      }
+    </script>
 </body>
 
 </html>

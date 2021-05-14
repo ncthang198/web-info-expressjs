@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hôm nay ăn gì</title>
 </head>
-<body>
-  <!-- <h2><a href="/foods-tour">FOODS TOUR</a> </h2> <h2><a href="/hom-nay-an-gi">HÔM NAY ĂN GÌ</a> </h2> -->
-  <h2><a href="/foods-tour"> BẤM VÀO ĐÂY ĐỂ SANG XEM FOODS TOUR</a> </h2>  
+<body>    
+  <%- include('navigation', {data: null}); %>
+
   <h1>SIÊU MÁY TÍNH ĐÃ CHỌN HÔM NAY ĂN MÓN</h1>
   <h2>Tên món: <%=dish.dishName%></h2>
   <h3>Miêu tả: <%=dish.describe%></h3>
