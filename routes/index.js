@@ -15,18 +15,21 @@ router.get("/", function (req, res, next) {
 });
 
 /* GET home page. */
+router.get("/one-year-anniversary", function (req, res, next) {
+  return res.render("one-year-anniversary");
+});
 router.get("/hom-nay-an-gi", function (req, res, next) {
   var dish = "...";
-  axios    
+  axios
     .post("http://103.130.212.235:1999/api/v1/food/get_random_food")
 
     .then(function (response) {
       // handle success
-      dish = response.data.food;      
+      dish = response.data.food;
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      console.log(error); 
     })
     .then(function () {
       // always executed
@@ -41,12 +44,12 @@ router.post("/them-mon-an", function (req, res, next) {
 });
 router.get("/foods-tour", function (req, res, next) {
   var dishes = "...";
-  axios    
+  axios
     .post("http://103.130.212.235:1999/api/v1/food/get_all_foods")
 
     .then(function (response) {
       // handle success
-      dishes = response.data.foods;      
+      dishes = response.data.foods;
     })
     .catch(function (error) {
       // handle error

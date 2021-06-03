@@ -41,11 +41,101 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
     rel="stylesheet">
   <!-- //Fonts -->
-
+  <style>
+    @-webkit-keyframes snowflakes-fall {
+      0% {top:-10%}
+      100% {top:100%}
+    }
+    @-webkit-keyframes snowflakes-shake {
+      0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+      50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+    }
+    @keyframes snowflakes-fall {
+      0% {top:-10%}
+      100% {top:100%}
+    }
+    @keyframes snowflakes-shake {
+      0%,100%{ transform:translateX(0)}
+      50% {transform:translateX(80px)}
+    }
+    .snowflake {
+      color: #fff;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      text-shadow: 0 0 5px #000;
+      position:fixed;
+      top:-10%;
+      z-index:9999;
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+      cursor:default;
+      -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+      -webkit-animation-duration:10s,3s;
+      -webkit-animation-timing-function:linear,ease-in-out;
+      -webkit-animation-iteration-count:infinite,infinite;
+      -webkit-animation-play-state:running,running;
+      animation-name:snowflakes-fall,snowflakes-shake;
+      animation-duration:10s,3s;
+      animation-timing-function:linear,ease-in-out;
+      animation-iteration-count:infinite,infinite;
+      animation-play-state:running,running;
+    }
+    .snowflake:nth-of-type(0){
+      left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+    }
+    .snowflake:nth-of-type(1){
+      left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+    }
+    .snowflake:nth-of-type(2){
+      left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+    }
+    .snowflake:nth-of-type(3){
+      left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+    }
+    .snowflake:nth-of-type(4){
+      left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+    }
+    .snowflake:nth-of-type(5){
+      left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+    }
+    .snowflake:nth-of-type(6){
+      left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+    }
+    .snowflake:nth-of-type(7){
+      left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+    }
+    .snowflake:nth-of-type(8){
+      left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+    }
+    .snowflake:nth-of-type(9){
+      left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+    }
+    .snowflake:nth-of-type(10){
+      left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+    }
+    .snowflake:nth-of-type(11){
+      left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+    }
+  </style>
 </head>
 
 <body>
-
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❤️</div>
+    <div class="snowflake">♡</div>
+    <div class="snowflake">💕</div>
+    <div class="snowflake">💕</div>
+    <div class="snowflake">♡</div>
+    <div class="snowflake">💚</div>
+    <div class="snowflake">♫</div>
+    <div class="snowflake">♬</div>
+    <div class="snowflake">♪</div>  
+    <div class="snowflake">♡</div>
+    <div class="snowflake">💚</div>
+    <div class="snowflake">♡</div>
+  </div>
   <!-- mian-content -->
   <div class="main-banner" id="home">
 
@@ -74,72 +164,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <img width="150" height="150" src="images/doi.jpg" class="admin img-fluid" alt="mobile-image">
             <!-- <img width="150" height="150" src="images/thang.jpg" class="admin img-fluid" alt="mobile-image">
             <img width="150" height="150" src="images/thao.jpg" class="admin img-fluid" alt="mobile-image"> -->
-            <!-- <ul class="w3pvt_social_list √list-unstyled mt-4">
-              <li>
-                <a href="https://www.facebook.com/thangnct110/" class="w3layouts-icon">
-                  <span class="fa fa-facebook-f"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/thang_nct/" class="w3layouts-icon">
-                  <span class="fa fa-instagram"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://join.skype.com/invite/vRTXBCGfQYGN" class="w3layouts-icon">
-                  <span class="fa fa-skype"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/thang-nguyen-b396171a9" class="w3layouts-icon">
-                  <span class="fa fa-linkedin"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ncthang198" class="w3layouts-icon">
-                  <span class="fa fa-git"></span>
-                </a>
-              </li>
-            </ul> -->
+            
             <h4>Page này lập ra để nói rằng Thắng và Thảo yêu nhau</h4>
             <br>
             <br>
             <br>
             
-            <h4 style="color:fuchsia;"><a style="background-color:hotpink;color: ivory;" href="/hom-nay-an-gi">HÔM NAY ĂN GÌ ? - CLICK VÀO ĐÂY</a></h4>
-            <!-- <h2>My Introduction</h2>
-            <p>
-              I'm fullstack developer. Providing services and solutions about web, mobile and desktop.
-               </p> -->
-
+            <h4 style="color:fuchsia;"><a style="background-color:hotpink;color: ivory;" href="/one-year-anniversary">Video kỷ niệm 1 năm yêu nhau</a></h4>
           </section>
-          <section id="content2" class="inner-w3layouts-wrap">
-            <!-- <h3 class="head-w3ls">What I do</h3>
-            <p>I am a programer. My hobbies are codeing, play sports most is soccer, besides that I enjoy traveling,
-              reading book and photography.</p> -->
+          <section id="content2" class="inner-w3layouts-wrap">            
           </section>
 
-          <!-- <section id="content3" class="inner-w3layouts-wrap">
-            <h3 class="head-w3ls">See My Latest Works.</h3>
-            <div class="row news-grids text-center">
-              <div class="col-4 gal-img">
-                <a href="#gal1"><img src="images/g1.jpg" alt="news image" class="img-fluid"></a>
-                <a href="#gal2"><img src="images/g3.jpg" alt="news image" class="img-fluid"></a>
-
-
-              </div>
-              <div class="col-4 gal-img">
-                <a href="#gal3"><img src="images/g2.jpg" alt="news image" class="img-fluid"></a>
-                <a href="#gal4"><img src="images/g4.jpg" alt="news image" class="img-fluid"></a>
-              </div>
-              <div class="col-4 gal-img">
-
-
-                <a href="#gal5"><img src="images/g5.jpg" alt="news image" class="img-fluid"></a>
-                <a href="#gal6"><img src="images/g6.jpg" alt="news image" class="img-fluid"></a>
-              </div>
-            </div>
-          </section> -->
           
           <section id="content4" class="inner-w3layouts-wrap">
             <ul class="w3pvt_social_list √list-unstyled mt-4">
