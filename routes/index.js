@@ -5,13 +5,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  let diffDays = dayDiff();
+  let {startDay, currentDay, diffDays} = dayDiff();
 
   // console.log("year: ", parseInt(dayDiff() / 365))
   // console.log("month: ", monthDiff())
   // console.log("day: ", dayDiff())
-  console.log(diffDays);
-  res.render("index", { diffDays: diffDays });
+  console.log(diffDays, "hahahha");
+  res.render("index", { startDay, currentDay, diffDays: diffDays });
 });
 
 /* GET home page. */
@@ -74,10 +74,16 @@ function monthDiff(firstDate = new Date()) {
 const dayDiff = () => {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const firstDate = new Date("2020-06-06");
-  console.log(firstDate);
+  let startDay =` ${firstDate.getDate()}/${(firstDate.getMonth()+1)}/${firstDate.getFullYear()}`
   const today = new Date();
+  let currentDay =` ${today.getDate()}/${(today.getMonth()+1)}/${today.getFullYear()}`
   console.log(today);
   const diffDays = Math.round(Math.abs((today - firstDate) / oneDay));
-  return diffDays;
+  return {
+    diffDays,
+    startDay,
+    currentDay
+  } ;
 };
+
 module.exports = router;
