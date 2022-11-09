@@ -6,10 +6,9 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// router.get('/mylove', function(req, res, next) {
-//   let {startDay, currentDay, diffDays} = dayDiff();
-//   res.render("mylove", { startDay, currentDay, diffDays: diffDays });
-// });
+router.get('/ve-chung-toi', function (req, res, next) {
+  res.render("about");
+});
 
 const dayDiff = () => {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
