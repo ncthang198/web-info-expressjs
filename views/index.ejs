@@ -18,6 +18,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!--load all styles -->
   <meta name="keywords" content="Nguyễn Công Thắng, thangnct, hit, hitclub, HIT, thangnc" />
   <script>
+    function myFunction() {
+      console.log("hello")
+      window.ReactNativeWebView.postMessage("Hello")
+}
     addEventListener("load", function () {
       setTimeout(hideURLbar, 0);
     }, false);
@@ -48,6 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="banner-info">
       <div class="w3pvt-logo text-center">
         <h1> <a href="#">Hello</a></h1>
+        <button onclick="myFunction()">Click me</button>
       </div>
       <div class="middile-inner-con">
         <div class="tab-main mx-auto">
