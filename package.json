@@ -7,13 +7,15 @@
     "deploy": "pm2 start ./bin/www --name 'lem-kitchen'"
   },
   "dependencies": {
+    "body-parser": "^1.20.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pm2": "^5.1.2"
+    "pm2": "^5.1.2",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
