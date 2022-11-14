@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "deploy": "pm2 start ./bin/www --name 'webinfo'"
+    "deploy": "pm2 start ./bin/www --name 'lem-kitchen'"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
