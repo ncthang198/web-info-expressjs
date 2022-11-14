@@ -29,6 +29,12 @@ app.use(bodyParser.json())
 // })
 app.use('/', indexRouter);
 
+app.get('/webhook/', function (req, res) {
+  if (req.query['hub.verify_token'] === 'Tkangg@3') {
+    res.send(req.query['hub.challenge'])
+  }
+  res.send('Error, wrong token')
+})
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -46,11 +52,6 @@ app.use(function (err, req, res, next) {
 });
 
 // for Facebook verification
-app.get('/webhook/', function (req, res) {
-  if (req.query['hub.verify_token'] === 'Tkangg@3') {
-    res.send(req.query['hub.challenge'])
-  }
-  res.send('Error, wrong token')
-})
+
 
 module.exports = app;
