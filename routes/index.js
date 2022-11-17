@@ -6,8 +6,25 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/ve-chung-toi', function (req, res, next) {
-  res.render("about");
+router.get('/dat-hang', function (req, res, next) {
+  res.render("order");
+});
+router.post('/dat-hang', function (req, res, next) {
+  console.log(req.body);
+  const body = req.body
+  if (body.payment_total_checksum > 0) {
+    const order = {
+      receiverName: body.q18_tenNgui,
+      receiverPhone: body.q6_sDin[full],
+      receiverAddress: body.q8_diaChi[city],
+      receiverNote: body.q12_luuY,
+
+    }
+    res.render("order-success");
+  }
+});
+router.get('/dat-hang-thanh-cong', function (req, res, next) {
+  res.render("order-success");
 });
 
 const dayDiff = () => {
