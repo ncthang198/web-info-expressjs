@@ -270,7 +270,7 @@
       productID = { "0": "input_3_1006", "1": "input_3_1004", "2": "input_3_1007" };
       paymentType = "product";
       JotForm.setCurrencyFormat('VND', true, 'point');
-      JotForm.totalCounter({ "input_3_1006": { "price": "100000", "quantityField": "input_3_quantity_1006_0" }, "input_3_1004": { "price": "90000.00", "quantityField": "input_3_quantity_1004_0" }, "input_3_1007": { "price": "30000.00", "quantityField": "input_3_quantity_1007_0" } });
+      JotForm.totalCounter({ "input_3_1006": { "price": "95000", "quantityField": "input_3_quantity_1006_0" }, "input_3_1004": { "price": "90000", "quantityField": "input_3_quantity_1004_0" }, "input_3_1007": { "price": "30000", "quantityField": "input_3_quantity_1007_0" } });
       $$('.form-product-custom_quantity').each(function (el, i) { el.observe('blur', function () { isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value) }) });
       $$('.form-product-custom_quantity').each(function (el, i) { el.observe('focus', function () { this.value == 0 ? this.value = '' : this.value }) });
       JotForm.handleProductLightbox();
@@ -398,7 +398,7 @@
                             <b>
                               <span data-wrapper-react="true">
                                 <span id="input_3_1006_price">
-                                  100,000.00
+                                  95.000
                                 </span>
                                 <span class="currency_abr">
                                   VND
@@ -410,7 +410,7 @@
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <label class="form-sub-label" for="input_3_quantity_1006_0" style="min-height:13px"
                             aria-hidden="false"> Lạng </label>
-                          <input type="text" size="3" value="0" class="form-textbox form-product-custom_quantity"
+                          <input type="text" size="3" value="1" class="form-textbox form-product-custom_quantity"
                             name="bo_soi" id="input_3_quantity_1006_0">
                         </span>
                       </div>
@@ -471,7 +471,7 @@
                           <span class="select_cont">
                             <select class="form-dropdown" name="chan_ga" id="input_3_quantity_1004_0">
                               <option value="0"> 0 </option>
-                              <option value="1"> 1 </option>
+                              <option selected="selected" value="1"> 1 </option>
                               <option value="2"> 2 </option>
                               <option value="3"> 3 </option>
                               <option value="4"> 4 </option>
@@ -542,7 +542,7 @@
                           <span class="select_cont">
                             <select class="form-dropdown" name="nem_chua" id="input_3_quantity_1007_0">
                               <option value="0"> 0 </option>
-                              <option value="1"> 1 </option>
+                              <option selected="selected" value="1"> 1 </option>
                               <option value="2"> 2 </option>
                               <option value="3"> 3 </option>
                               <option value="4"> 4 </option>
