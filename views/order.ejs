@@ -12,12 +12,12 @@
     href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F223184427162453"
     title="oEmbed Form">
   <meta property="og:title" content="LEM&amp;#39;S KITCHEN">
-  <meta property="og:url" content="https://lemkitchen.online/dat-hang">
+  <meta property="og:url" content="https://form.jotform.com/223184427162453">
   <meta property="og:description" content="Please click the link to complete this form.">
   <meta name="slack-app-id" content="AHNMASS8M">
   <link rel="shortcut icon" href="https://cdn.jotfor.ms/assets/img/favicons/favicon-2021.svg">
   <meta property="og:image" content="https://cdn.jotfor.ms/assets/img/favicons/favicon-2021.svg">
-  <link rel="canonical" href="https://lemkitchen.online/dat-hang">
+  <link rel="canonical" href="https://form.jotform.com/223184427162453">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
   <meta name="HandheldFriendly" content="true">
   <title>LEM'S KITCHEN</title>
@@ -42,9 +42,9 @@
   </style>
   <link type="text/css" rel="stylesheet"
     href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f7ed99c2c2c7240ba580251">
-  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.37230">
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.37231">
   <link type="text/css" rel="stylesheet"
-    href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.37230">
+    href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.37231">
   <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
     /*PREFERENCES STYLE*/
@@ -270,21 +270,22 @@
       productID = { "0": "input_3_1006", "1": "input_3_1004", "2": "input_3_1007" };
       paymentType = "product";
       JotForm.setCurrencyFormat('VND', true, 'point');
-      JotForm.totalCounter({ "input_3_1006": { "price": "100000.00", "quantityField": "input_3_quantity_1006_0" }, "input_3_1004": { "price": "90000.00", "quantityField": "input_3_quantity_1004_0" }, "input_3_1007": { "price": "30000.00", "quantityField": "input_3_quantity_1007_0" } });
+      JotForm.totalCounter({ "input_3_1006": { "price": "100000", "quantityField": "input_3_quantity_1006_0" }, "input_3_1004": { "price": "90000.00", "quantityField": "input_3_quantity_1004_0" }, "input_3_1007": { "price": "30000.00", "quantityField": "input_3_quantity_1007_0" } });
       $$('.form-product-custom_quantity').each(function (el, i) { el.observe('blur', function () { isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value) }) });
       $$('.form-product-custom_quantity').each(function (el, i) { el.observe('focus', function () { this.value == 0 ? this.value = '' : this.value }) });
       JotForm.handleProductLightbox();
-      if (window.JotForm && JotForm.accessible) $('input_12').setAttribute('tabindex', 0);
       if (window.JotForm && JotForm.accessible) $('input_18').setAttribute('tabindex', 0);
       JotForm.setPhoneMaskingValidator('input_6_full', '### ### ####');
+      if (window.JotForm && JotForm.accessible) $('input_26').setAttribute('tabindex', 0);
+      if (window.JotForm && JotForm.accessible) $('input_28').setAttribute('tabindex', 0);
       JotForm.alterTexts(undefined);
       JotForm.alterTexts({ "couponApply": "Apply", "couponBlank": "Please enter a coupon.", "couponChange": "", "couponEnter": "Enter coupon", "couponExpired": "Coupon is expired. Please try another one.", "couponInvalid": "Coupon is invalid.", "couponValid": "Coupon is valid.", "shippingShipping": "Shipping", "taxTax": "Khuy&#7871;n  m&atilde;i", "totalSubtotal": "Gi&aacute;", "totalTotal": "T&#7893;ng" }, true);
       /*INIT-END*/
     });
 
-    JotForm.prepareCalculationsOnTheFly([null, { "name": "heading", "qid": "1", "text": "LEM'S KITCHEN", "type": "control_head" }, null, { "name": "products", "qid": "3", "text": "Products", "type": "control_payment" }, { "name": "thongTin", "qid": "4", "text": "Thong tin ngu&#7901;i nh&#7853;n", "type": "control_head" }, null, { "name": "sDin", "qid": "6", "text": "S&#7889; di&#7879;n thoai ngu&#7901;i nh&#7853;n", "type": "control_phone" }, null, { "name": "diaChi", "qid": "8", "text": "Dia chi nh&#7853;n hang", "type": "control_address" }, null, null, null, { "name": "luuY", "qid": "12", "text": "Luu y cho ngu&#7901;i ban", "type": "control_textarea" }, null, null, null, null, { "name": "dthang", "qid": "17", "text": "D&#7863;t&nbsp;hang", "type": "control_button" }, { "description": "", "name": "tenNgui", "qid": "18", "subLabel": "", "text": "Ten ngu&#7901;i nh&#7853;n", "type": "control_textbox" }, null, { "name": "heading20", "qid": "20", "text": "", "type": "control_head" }]);
+    JotForm.prepareCalculationsOnTheFly([null, { "name": "heading", "qid": "1", "text": "LEM'S KITCHEN", "type": "control_head" }, null, { "name": "products", "qid": "3", "text": "Products", "type": "control_payment" }, { "name": "thongTin", "qid": "4", "text": "Thong tin ngu&#7901;i nh&#7853;n", "type": "control_head" }, null, { "name": "phone", "qid": "6", "text": "S&#7889; di&#7879;n thoai ngu&#7901;i nh&#7853;n", "type": "control_phone" }, null, null, null, null, null, null, null, null, null, null, { "name": "dthang", "qid": "17", "text": "D&#7863;t&nbsp;hang", "type": "control_button" }, { "description": "", "name": "name", "qid": "18", "subLabel": "", "text": "Ten ngu&#7901;i nh&#7853;n", "type": "control_textbox" }, null, { "name": "heading20", "qid": "20", "text": "", "type": "control_head" }, null, null, null, null, null, { "description": "", "name": "address", "qid": "26", "subLabel": "", "text": "Dia chi nh&#7853;n hang", "type": "control_textbox" }, null, { "description": "", "name": "note", "qid": "28", "subLabel": "", "text": "Type a question", "type": "control_textbox" }]);
     setTimeout(function () {
-      JotForm.paymentExtrasOnTheFly([null, { "name": "heading", "qid": "1", "text": "LEM'S KITCHEN", "type": "control_head" }, null, { "name": "products", "qid": "3", "text": "Products", "type": "control_payment" }, { "name": "thongTin", "qid": "4", "text": "Thong tin ngu&#7901;i nh&#7853;n", "type": "control_head" }, null, { "name": "sDin", "qid": "6", "text": "S&#7889; di&#7879;n thoai ngu&#7901;i nh&#7853;n", "type": "control_phone" }, null, { "name": "diaChi", "qid": "8", "text": "Dia chi nh&#7853;n hang", "type": "control_address" }, null, null, null, { "name": "luuY", "qid": "12", "text": "Luu y cho ngu&#7901;i ban", "type": "control_textarea" }, null, null, null, null, { "name": "dthang", "qid": "17", "text": "D&#7863;t&nbsp;hang", "type": "control_button" }, { "description": "", "name": "tenNgui", "qid": "18", "subLabel": "", "text": "Ten ngu&#7901;i nh&#7853;n", "type": "control_textbox" }, null, { "name": "heading20", "qid": "20", "text": "", "type": "control_head" }]);
+      JotForm.paymentExtrasOnTheFly([null, { "name": "heading", "qid": "1", "text": "LEM'S KITCHEN", "type": "control_head" }, null, { "name": "products", "qid": "3", "text": "Products", "type": "control_payment" }, { "name": "thongTin", "qid": "4", "text": "Thong tin ngu&#7901;i nh&#7853;n", "type": "control_head" }, null, { "name": "phone", "qid": "6", "text": "S&#7889; di&#7879;n thoai ngu&#7901;i nh&#7853;n", "type": "control_phone" }, null, null, null, null, null, null, null, null, null, null, { "name": "dthang", "qid": "17", "text": "D&#7863;t&nbsp;hang", "type": "control_button" }, { "description": "", "name": "name", "qid": "18", "subLabel": "", "text": "Ten ngu&#7901;i nh&#7853;n", "type": "control_textbox" }, null, { "name": "heading20", "qid": "20", "text": "", "type": "control_head" }, null, null, null, null, null, { "description": "", "name": "address", "qid": "26", "subLabel": "", "text": "Dia chi nh&#7853;n hang", "type": "control_textbox" }, null, { "description": "", "name": "note", "qid": "28", "subLabel": "", "text": "Type a question", "type": "control_textbox" }]);
     }, 20); 
   </script>
 </head>
@@ -340,13 +341,13 @@
                     </ul>
                     <ul class="form-overlay-item" pid="1004" hasicon="false" hasimages="true" iconvalue="">
                       <li class="image-overlay-image">
+                        <img loading="lazy" src="images/form_files-IMG_0799.JPG">
+                      </li>
+                      <li class="image-overlay-image">
                         <img loading="lazy" src="images/form_files-IMG_0800.JPG">
                       </li>
                       <li class="image-overlay-image">
                         <img loading="lazy" src="images/form_files-IMG_0798.JPG">
-                      </li>
-                      <li class="image-overlay-image">
-                        <img loading="lazy" src="images/form_files-IMG_0799.JPG">
                       </li>
                       <li class="image-overlay-image">
                         <img loading="lazy" src="images/form_files-IMG_0800.JPG">
@@ -377,7 +378,7 @@
                         </div>
                       </div>
                       <div class="p_image">
-                        <div role="img" aria-label="Bò khô sợ" class="image_area form-product-image-with-options"
+                        <div role="img" aria-label="Bò khô sợi" class="image_area form-product-image-with-options"
                           style='background-image:url("https://www.jotform.com/uploads/thangnct110/form_files/IMG_0796.JPG")'>
                           <div class="image_zoom">
                           </div>
@@ -387,7 +388,7 @@
                         <span data-wrapper-react="true">
                           <div class="title_description">
                             <span class="form-product-name" id="product-name-input_3_1006">
-                              Bò khô sợ
+                              Bò khô sợi
                             </span>
                             <span class="form-product-description" id="product-name-description-input_3_1006">
                               1 lạng
@@ -410,7 +411,7 @@
                           <label class="form-sub-label" for="input_3_quantity_1006_0" style="min-height:13px"
                             aria-hidden="false"> Lạng </label>
                           <input type="text" size="3" value="0" class="form-textbox form-product-custom_quantity"
-                            name="q3_products[special_1006][item_0]" id="input_3_quantity_1006_0">
+                            name="bo_soi" id="input_3_quantity_1006_0">
                         </span>
                       </div>
                       <div class="focus_action_button_container">
@@ -436,7 +437,7 @@
                       </div>
                       <div class="p_image">
                         <div role="img" aria-label="Chân gà xả tắc" class="image_area form-product-image-with-options"
-                          style='background-image:url("https://www.jotform.com/uploads/thangnct110/form_files/IMG_0800.JPG")'>
+                          style='background-image:url("https://www.jotform.com/uploads/thangnct110/form_files/IMG_0799.JPG")'>
                           <div class="image_zoom">
                           </div>
                         </div>
@@ -468,8 +469,7 @@
                           <label class="form-sub-label" for="input_3_quantity_1004_0" style="min-height:13px"
                             aria-hidden="false"> Hộp </label>
                           <span class="select_cont">
-                            <select class="form-dropdown" name="q3_products[special_1004][item_0]"
-                              id="input_3_quantity_1004_0">
+                            <select class="form-dropdown" name="chan_ga" id="input_3_quantity_1004_0">
                               <option value="0"> 0 </option>
                               <option value="1"> 1 </option>
                               <option value="2"> 2 </option>
@@ -540,8 +540,7 @@
                           <label class="form-sub-label" for="input_3_quantity_1007_0" style="min-height:13px"
                             aria-hidden="false"> Chục </label>
                           <span class="select_cont">
-                            <select class="form-dropdown" name="q3_products[special_1007][item_0]"
-                              id="input_3_quantity_1007_0">
+                            <select class="form-dropdown" name="nem_chua" id="input_3_quantity_1007_0">
                               <option value="0"> 0 </option>
                               <option value="1"> 1 </option>
                               <option value="2"> 2 </option>
@@ -587,14 +586,6 @@
             </div>
           </div>
         </li>
-        <li class="form-line" data-type="control_textarea" id="id_12">
-          <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Lưu ý cho người bán
-          </label>
-          <div id="cid_12" class="form-input-wide" data-layout="full">
-            <textarea id="input_12" class="form-textarea" name="q12_luuY" style="width:648px;height:163px"
-              data-component="textarea" aria-labelledby="label_12"></textarea>
-          </div>
-        </li>
         <li id="cid_4" class="form-input-wide" data-type="control_head">
           <div class="form-header-group  header-default">
             <div class="header-text httal htvam">
@@ -612,7 +603,7 @@
             </span>
           </label>
           <div id="cid_18" class="form-input-wide jf-required" data-layout="half">
-            <input type="text" id="input_18" name="q18_tenNgui" data-type="input-textbox"
+            <input type="text" id="input_18" name="name" data-type="input-textbox"
               class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value=""
               data-component="textbox" aria-labelledby="label_18" required="">
           </div>
@@ -626,7 +617,7 @@
           </label>
           <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
             <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="tel" id="input_6_full" name="q6_sDin[full]" data-type="mask-number"
+              <input type="tel" id="input_6_full" name="phone" data-type="mask-number"
                 class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue=""
                 autocomplete="section-input_6 tel-national" style="width:310px" data-masked="true" value=""
                 placeholder="000 000 0000" data-component="phone" aria-labelledby="label_6" required="">
@@ -635,73 +626,26 @@
             </span>
           </div>
         </li>
-        <li class="form-line jf-required" data-type="control_address" id="id_8">
-          <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8_city">
+        <li class="form-line jf-required" data-type="control_textbox" id="id_26">
+          <label class="form-label form-label-top form-label-auto" id="label_26" for="input_26">
             Địa chỉ nhận hàng
             <span class="form-required">
               *
             </span>
           </label>
-          <div id="cid_8" class="form-input-wide jf-required" data-layout="full">
-            <div summary="" class="form-address-table jsTest-addressField">
-              <div class="form-address-line-wrapper jsTest-address-line-wrapperField" style="display:none">
-                <span class="form-address-line form-address-street-line jsTest-address-lineField">
-                  <span class="form-sub-label-container" style="vertical-align:top">
-                    <input type="text" id="input_8_addr_line1" name="q8_diaChi[addr_line1]"
-                      class="form-textbox form-address-line" data-defaultvalue=""
-                      autocomplete="section-input_8 address-line1" value="" data-component="address_line_1"
-                      aria-labelledby="label_8 sublabel_8_addr_line1">
-                    <label class="form-sub-label" for="input_8_addr_line1" id="sublabel_8_addr_line1"
-                      style="min-height:13px" aria-hidden="false"> Street Address </label>
-                  </span>
-                </span>
-              </div>
-              <div class="form-address-line-wrapper jsTest-address-line-wrapperField" style="display:none">
-                <span class="form-address-line form-address-street-line jsTest-address-lineField">
-                  <span class="form-sub-label-container" style="vertical-align:top">
-                    <input type="text" id="input_8_addr_line2" name="q8_diaChi[addr_line2]"
-                      class="form-textbox form-address-line" data-defaultvalue="" autocomplete="section-input_8 off"
-                      value="" data-component="address_line_2" aria-labelledby="label_8 sublabel_8_addr_line2">
-                    <label class="form-sub-label" for="input_8_addr_line2" id="sublabel_8_addr_line2"
-                      style="min-height:13px" aria-hidden="false"> Street Address Line 2 </label>
-                  </span>
-                </span>
-              </div>
-              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                <span class="form-address-line form-address-city-line jsTest-address-lineField ">
-                  <span class="form-sub-label-container" style="vertical-align:top">
-                    <input type="text" id="input_8_city" name="q8_diaChi[city]"
-                      class="form-textbox validate[required] form-address-city" data-defaultvalue=""
-                      autocomplete="section-input_8 address-level2" value="" data-component="city"
-                      aria-labelledby="label_8" required="">
-                  </span>
-                </span>
-                <span class="form-address-line form-address-state-line jsTest-address-lineField form-address-hiddenLine"
-                  style="display:none">
-                  <span class="form-sub-label-container" style="vertical-align:top">
-                    <input type="text" id="input_8_state" name="q8_diaChi[state]"
-                      class="form-textbox form-address-state" data-defaultvalue=""
-                      autocomplete="section-input_8 address-level1" value="" data-component="state"
-                      aria-labelledby="label_8 sublabel_8_state">
-                    <label class="form-sub-label" for="input_8_state" id="sublabel_8_state" style="min-height:13px"
-                      aria-hidden="false"> State / Province </label>
-                  </span>
-                </span>
-              </div>
-              <div class="form-address-line-wrapper jsTest-address-line-wrapperField" style="display:none">
-                <span class="form-address-line form-address-zip-line jsTest-address-lineField form-address-hiddenLine"
-                  style="display:none">
-                  <span class="form-sub-label-container" style="vertical-align:top">
-                    <input type="text" id="input_8_postal" name="q8_diaChi[postal]"
-                      class="form-textbox form-address-postal" data-defaultvalue=""
-                      autocomplete="section-input_8 postal-code" value="" data-component="zip"
-                      aria-labelledby="label_8 sublabel_8_postal">
-                    <label class="form-sub-label" for="input_8_postal" id="sublabel_8_postal" style="min-height:13px"
-                      aria-hidden="false"> Postal / Zip Code </label>
-                  </span>
-                </span>
-              </div>
-            </div>
+          <div id="cid_26" class="form-input-wide jf-required" data-layout="half">
+            <input type="text" id="input_26" name="address" data-type="input-textbox"
+              class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value=""
+              data-component="textbox" aria-labelledby="label_26" required="">
+          </div>
+        </li>
+        <li class="form-line" data-type="control_textbox" id="id_28">
+          <label class="form-label form-label-top form-label-auto" id="label_28" for="input_28">Lưu ý cho người bán
+          </label>
+          <div id="cid_28" class="form-input-wide" data-layout="half">
+            <input placeholder="Để trống nếu không có lưu ý gì" type="text" id="input_28" name="note"
+              data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
+              value="" data-component="textbox" aria-labelledby="label_28">
           </div>
         </li>
         <li id="cid_20" class="form-input-wide" data-type="control_head">
@@ -746,21 +690,6 @@
       }
     </script>
     <div class="formFooter-heightMask">
-    </div>
-    <div class="formFooter f6 branding21">
-      <div class="formFooter-wrapper formFooter-leftSide">
-        <a href="https://www.jotform.com/?utm_source=formfooter&amp;utm_medium=banner&amp;utm_term=223184427162453&amp;utm_content=jotform_logo&amp;utm_campaign=powered_by_jotform_le"
-          target="_blank" class="formFooter-logoLink"><img class="formFooter-logo"
-            src="images/logo2021-jotform-logo-white.svg" alt="Jotform Logo" style="height: 44px;"></a>
-      </div>
-      <div class="formFooter-wrapper formFooter-rightSide">
-        <span class="formFooter-text">
-          Now create your own Jotform - It's free!
-        </span>
-        <a class="formFooter-button"
-          href="https://www.jotform.com/?utm_source=formfooter&amp;utm_medium=banner&amp;utm_term=223184427162453&amp;utm_content=jotform_button&amp;utm_campaign=powered_by_jotform_le"
-          target="_blank">Create your own Jotform</a>
-      </div>
     </div>
   </form>
 </body>

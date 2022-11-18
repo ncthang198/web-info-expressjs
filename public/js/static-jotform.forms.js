@@ -793,7 +793,7 @@ Object.extend(document, {
                             var dropDownElementOptions = dropDownElement.options; var isZeroOptionExistInDropDownElementsOptions = false; for (var i = 0; i < dropDownElementOptions.length; i++) { if (dropDownElementOptions[i].value === '0') { isZeroOptionExistInDropDownElementsOptions = true; break; } }
                             if (dropDownElement && !event.target.checked && isZeroOptionExistInDropDownElementsOptions) { dropDownElement.value = "0"; JotForm.runConditionForId(dropDownElement.id); }
                         }
-                        if (typeof event.target.checked !== 'undefined' && event.target.checked === false) { var itemSubTotal = $(event.target.id + '_item_subtotal'); if (itemSubTotal) itemSubTotal.update("0.00"); }
+                        if (typeof event.target.checked !== 'undefined' && event.target.checked === false) { var itemSubTotal = $(event.target.id + '_item_subtotal'); if (itemSubTotal) itemSubTotal.update("0"); }
                     }
                 }); element.observe('change', function (event) {
                     function deselectProduct(quantityType) { var subProductTable = $(event.target).up('.form-product-child-table'); if (subProductTable && typeof subProductTable !== 'undefined') { var quantityInputClass = quantityType === 'select-one' ? '.select_cont .form-subproduct-quantity' : '.form-subproduct-quantity.form-product-custom_quantity'; var quantityList = subProductTable.querySelectorAll(quantityInputClass); if (quantityList.length > 0 && Array.from(quantityList).every(function (el) { return ['', '0'].includes(el.value) })) { element.classList.remove('p_selected') }; } else { element.classList.remove('p_selected'); } }
@@ -2036,7 +2036,7 @@ Object.extend(document, {
                 if (pair.value.quantityField && !(parseInt($(pair.value.quantityField).getValue()) > 0)) { if (!$(pair.value.quantityField).hasClassName('form-subproduct-quantity')) { return; } }
                 try {
                     var parentSelector = pair.key.split("_").slice(0, -1).join("_"); if ($(parentSelector) && $(parentSelector).type === "radio" && !$(parentSelector).checked) {
-                        if ($(pair.value.quantityField).value > 0) { $(pair.value.quantityField).value = 0; if ($(parentSelector + '_item_subtotal')) { $(parentSelector + '_item_subtotal').update("0.00"); } }
+                        if ($(pair.value.quantityField).value > 0) { $(pair.value.quantityField).value = 0; if ($(parentSelector + '_item_subtotal')) { $(parentSelector + '_item_subtotal').update("0"); } }
                         if (window.FORM_MODE === "cardform") { $$("ul.products")[0] && $$("ul.products")[0].querySelector('li[data-input="' + parentSelector + '"]') && $$("ul.products")[0].querySelector('li[data-input="' + parentSelector + '"]').classList.remove("product--selected"); $(pair.value.quantityField).up().querySelector(".jfDropdown-chip.isSingle").innerText = 0; }
                         return;
                     }
@@ -2091,7 +2091,7 @@ Object.extend(document, {
                 }
                 taxTotal += taxAmount; taxTotalWithoutDiscount += taxAmountWithoutDiscount; if (!flatShipping) { shippingTotal += productShipping; }
                 subTotal += price; subTotalWithoutDiscount += priceWithoutDiscount; otherTotal += productShipping + taxAmount; otherTotalWithoutDiscount += productShipping + taxAmountWithoutDiscount;
-            } else { if ($(pair.key + '_item_subtotal')) { $(pair.key + '_item_subtotal').update("0.00"); } }
+            } else { if ($(pair.key + '_item_subtotal')) { $(pair.key + '_item_subtotal').update("0"); } }
             if ($(pair.key) || JotForm.couponApplied) {
                 if ($('coupon-button') && $(pair.key).checked === true && window.paymentType === 'subscription' && Array.from(document.querySelectorAll('.jfCard')).filter(function (el) { return el.dataset.type === 'control_stripe' }).length > 0) { selected_product_id = $(pair.key).value; JotForm.checkCouponAppliedProducts(); }; if ($(pair.key).checked) {
                     var amount = isSpecialPricing ? priceWithoutDiscount : parseFloat(pair.value.price); var description = ""; if (isSpecialPricing) { specialName.forEach(function (text) { description += text.name + ':' + text.value + ' '; }); }
@@ -2105,8 +2105,8 @@ Object.extend(document, {
             var paymentTotal = document.querySelector('.form-payment-total'); if (paymentTotal) { paymentTotal.parentNode.insertBefore(JotForm.discounts.container, paymentTotal); $('discount_total').update(parseFloat(reduce).formatMoney(decimal, dSeparator, tSeparator)); }
         }
         if (JotForm.payment === "paypalSPB" || JotForm.payment === "Stripe") { otherTotal = parsePriceWithoutComma(otherTotal); otherTotalWithoutDiscount = parsePriceWithoutComma(otherTotalWithoutDiscount); }
-        total = subTotal + otherTotal; totalWithoutDiscount = subTotalWithoutDiscount + otherTotalWithoutDiscount; total = flatShipping > 0 ? total + flatShipping : total; totalWithoutDiscount = flatShipping > 0 ? totalWithoutDiscount + flatShipping : totalWithoutDiscount; if (total === 0 || isNaN(total)) { total = "0.00"; totalWithoutDiscount = "0.00"; }
-        if ((total === 0 || total === "0.00" || isNaN(total)) && (window.JFAppsManager && window.JFAppsManager.checkoutKey && window.JFAppsManager.cartTotal > 0)) { total = window.JFAppsManager.cartTotal; totalWithoutDiscount = total; }
+        total = subTotal + otherTotal; totalWithoutDiscount = subTotalWithoutDiscount + otherTotalWithoutDiscount; total = flatShipping > 0 ? total + flatShipping : total; totalWithoutDiscount = flatShipping > 0 ? totalWithoutDiscount + flatShipping : totalWithoutDiscount; if (total === 0 || isNaN(total)) { total = "0"; totalWithoutDiscount = "0"; }
+        if ((total === 0 || total === "0" || isNaN(total)) && (window.JFAppsManager && window.JFAppsManager.checkoutKey && window.JFAppsManager.cartTotal > 0)) { total = window.JFAppsManager.cartTotal; totalWithoutDiscount = total; }
         if (JotForm.discounts.shipping && shippingTotal > 0 && subTotal >= minimum) { var reduce = type === "fixed" ? rate : (rate / 100) * parseFloat(shippingTotal); var oldShippingTotal = shippingTotal; shippingTotal = shippingTotal > reduce ? shippingTotal - reduce : 0; total = total - (oldShippingTotal - shippingTotal); totalWithoutDiscount = totalWithoutDiscount - (oldShippingTotal - shippingTotal); }
         this.paymentTotal = Number(total); if ($('creditCardTable')) { if (products > 0 && this.paymentTotal === 0 && discounted) { JotForm.setCreditCardVisibility(false); } else if ($$('input[id*="paymentType_credit"]').length > 0 && $$('input[id*="paymentType_credit"]')[0].checked) { JotForm.setCreditCardVisibility(true); } }
         if ($("payment_subtotal")) { $("payment_subtotal").update(parseFloat(subTotal).formatMoney(decimal, dSeparator, tSeparator)); }
@@ -2136,8 +2136,8 @@ Object.extend(document, {
                 function countQuantityTotal() {
                     if (JotForm.isVisible($(pair.value.quantityField))) {
                         if ($(pair.value.quantityField).tagName !== 'SELECT' || $(pair.value.quantityField).getSelected().index > 0 || $(pair.value.quantityField).getValue() === "0") {
-                            var productItem = $(pair.key) ? $(pair.key).up('.form-product-item') : false; var productWithSubProducts = productItem ? productItem.down('.form-product-has-subproducts') : false; var subProducts = productItem.select('.form-subproduct-quantity'); if ($(pair.value.quantityField).getValue() === "0") { var subTotalSpan = $(pair.key + '_item_subtotal'); if (subTotalSpan) subTotalSpan.update("0.00"); }
-                            if (productWithSubProducts) { productWithSubProducts.checked = false; var isAllSubProductsZero = true; $A(subProducts).each(function (pr) { if (!($(pr).getValue() <= 0)) { productWithSubProducts.checked = true; isAllSubProductsZero = false; } }); if (isAllSubProductsZero) { try { var subProductKeyPieces = pair.key.split('_'); subProductKeyPieces.splice(-1, 1); subProductKeyPieces = subProductKeyPieces.join('_'); var subTotalSpanForSubProduct = $(subProductKeyPieces + '_item_subtotal'); if (subTotalSpanForSubProduct) subTotalSpanForSubProduct.update("0.00"); } catch (e) { console.log(e); } } } else { if ($(pair.key)) { $(pair.key).checked = !($(pair.value.quantityField).getValue() <= 0) ? true : false; } }
+                            var productItem = $(pair.key) ? $(pair.key).up('.form-product-item') : false; var productWithSubProducts = productItem ? productItem.down('.form-product-has-subproducts') : false; var subProducts = productItem.select('.form-subproduct-quantity'); if ($(pair.value.quantityField).getValue() === "0") { var subTotalSpan = $(pair.key + '_item_subtotal'); if (subTotalSpan) subTotalSpan.update("0"); }
+                            if (productWithSubProducts) { productWithSubProducts.checked = false; var isAllSubProductsZero = true; $A(subProducts).each(function (pr) { if (!($(pr).getValue() <= 0)) { productWithSubProducts.checked = true; isAllSubProductsZero = false; } }); if (isAllSubProductsZero) { try { var subProductKeyPieces = pair.key.split('_'); subProductKeyPieces.splice(-1, 1); subProductKeyPieces = subProductKeyPieces.join('_'); var subTotalSpanForSubProduct = $(subProductKeyPieces + '_item_subtotal'); if (subTotalSpanForSubProduct) subTotalSpanForSubProduct.update("0"); } catch (e) { console.log(e); } } } else { if ($(pair.key)) { $(pair.key).checked = !($(pair.value.quantityField).getValue() <= 0) ? true : false; } }
                         }
                         JotForm.countTotal(prices);
                     }
