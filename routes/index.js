@@ -31,7 +31,7 @@ router.post('/dat-hang', async function (req, res, next) {
 
     let resCreateOrder = await axios.post(`${api_url}/order/create`, order);
     if (resCreateOrder) {
-      const message = `Bạn có đơn hàng mới\n Tên khách hàng: ${body.name}\n Số điện thoại: ${body.phone}\n Địa chỉ người nhận: ${body.address}\n Món: ${bo_soi > 0 ? `Bò khô sợi: ${bo_soi}. ` : ""}${chan_ga > 0 ? `Chân gà: ${chan_ga}. ` : ""}${nem_chua > 0 ? `Nem chua: ${nem_chua}. ` : ""}\n Tổng tiền: ${formatNumber(totalPrice)}\n Lưu ý: ${body.note}`
+      const message = `Bạn có đơn hàng mới\n Tên khách hàng: ${body.name}\n Số điện thoại: ${body.phone}\n Địa chỉ người nhận: ${body.address}\n Món: ${bo_soi > 0 ? `Bò khô sợi: ${bo_soi}. ` : ""}${chan_ga > 0 ? `Chân gà: ${chan_ga}. ` : ""}${nem_chua > 0 ? `Nem chua: ${nem_chua}. ` : ""}\n Tổng tiền: ${formatNumber(totalPrice)} VND\n Lưu ý: ${body.note}`
       const ress = await axios.post(`${api_url}/bot/noticeOrder`, { message });
       if (ress.data.isSuccess)
         res.render("order-success");

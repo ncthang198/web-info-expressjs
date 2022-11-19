@@ -291,8 +291,8 @@
 </head>
 
 <body>
-  <form class="jotform-form" action="http://localhost:1999/dat-hang" method="post" name="form_223184427162453"
-    id="223184427162453" accept-charset="utf-8" autocomplete="on">
+  <form class="jotform-form" action="/dat-hang" method="post" name="form_223184427162453" id="223184427162453"
+    accept-charset="utf-8" autocomplete="on">
     <input type="hidden" name="formID" value="223184427162453">
     <input type="hidden" id="JWTContainer" value="">
     <input type="hidden" id="cardinalOrderNumber" value="">
@@ -410,8 +410,22 @@
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <label class="form-sub-label" for="input_3_quantity_1006_0" style="min-height:13px"
                             aria-hidden="false"> Lạng </label>
-                          <input type="text" size="3" value="1" class="form-textbox form-product-custom_quantity"
-                            name="bo_soi" id="input_3_quantity_1006_0">
+                          <!-- <input type="text" size="3" value="0" class="form-textbox form-product-custom_quantity"
+                            name="bo_soi" id="input_3_quantity_1006_0"> -->
+                          <span class="select_cont">
+                            <select class="form-dropdown" name="bo_soi" id="input_3_quantity_1006_0">
+                              <option value="0"> 0 </option>
+                              <option value="2"> 2 </option>
+                              <option value="3"> 3 </option>
+                              <option value="4"> 4 </option>
+                              <option value="5"> 5 </option>
+                              <option value="6"> 6 </option>
+                              <option value="7"> 7 </option>
+                              <option value="8"> 8 </option>
+                              <option value="9"> 9 </option>
+                              <option value="10"> 10 </option>
+                            </select>
+                          </span>
                         </span>
                       </div>
                       <div class="focus_action_button_container">
@@ -471,7 +485,7 @@
                           <span class="select_cont">
                             <select class="form-dropdown" name="chan_ga" id="input_3_quantity_1004_0">
                               <option value="0"> 0 </option>
-                              <option selected="selected" value="1"> 1 </option>
+                              <option value="1"> 1 </option>
                               <option value="2"> 2 </option>
                               <option value="3"> 3 </option>
                               <option value="4"> 4 </option>
@@ -542,7 +556,7 @@
                           <span class="select_cont">
                             <select class="form-dropdown" name="nem_chua" id="input_3_quantity_1007_0">
                               <option value="0"> 0 </option>
-                              <option selected="selected" value="1"> 1 </option>
+                              <option value="0"> 1 </option>
                               <option value="2"> 2 </option>
                               <option value="3"> 3 </option>
                               <option value="4"> 4 </option>
@@ -620,7 +634,7 @@
               <input type="tel" id="input_6_full" name="phone" data-type="mask-number"
                 class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue=""
                 autocomplete="section-input_6 tel-national" style="width:310px" data-masked="true" value=""
-                placeholder="000 000 0000" data-component="phone" aria-labelledby="label_6" required="">
+                placeholder="033 *** ****" data-component="phone" aria-labelledby="label_6" required="">
               <label class="form-sub-label is-empty" for="input_6_full" id="sublabel_6_masked" style="min-height:13px"
                 aria-hidden="false"> </label>
             </span>
@@ -634,7 +648,7 @@
             </span>
           </label>
           <div id="cid_26" class="form-input-wide jf-required" data-layout="half">
-            <input type="text" id="input_26" name="address" data-type="input-textbox"
+            <input placeholder="Số 1, Đường..." type="text" id="input_26" name="address" data-type="input-textbox"
               class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value=""
               data-component="textbox" aria-labelledby="label_26" required="">
           </div>
@@ -650,12 +664,9 @@
         </li>
         <li id="cid_20" class="form-input-wide" data-type="control_head">
           <div class="form-header-group  header-default">
+            <p>- SDT: 033 789 6198 </p>
+            <p>- STK: Ngân hàng MB Bank - STK: 02501 6868 99999 </p>
             <div class="header-text httal htvam">
-              <h2 id="header_20" class="form-header" data-component="header">
-              </h2>
-              <div id="subHeader_20" class="form-subHeader">
-                * CSKH: 0337896198
-              </div>
             </div>
           </div>
         </li>
@@ -688,6 +699,9 @@
       for (var i = 0; i < all_spc.length; i++) {
         all_spc[i].value = "223184427162453-223184427162453";
       }
+      function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
     </script>
     <div class="formFooter-heightMask">
     </div>
